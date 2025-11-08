@@ -1,0 +1,318 @@
+Adjacency Matrix:
+         0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19
+      ---------------------------------------------------------------------------------------------------
+   0 |   --   29   --   --   --   50   92   60   43   70   16   --  100   76   91   67   90   --   76   85
+   1 |   29   --   53   83   29   --   16   32   --   38   91   35   --   48   --   69   --   22   --    5
+   2 |   --   53   --   --   --   99   --   38   --   62   21   34   51   --   71   --   --   --    3   18
+   3 |   --   83   --   --   --   --   --   39   --   --   --   96   89   --   16   77   --   96   --   99
+   4 |   --   29   --   --   --    2   50   --   --   --   90   55   84    6   82   36   --   --   --   54
+   5 |   50   --   99   --    2   --   --   --   --   76    4   24   87   --    9   52   63   77   43   47
+   6 |   92   16   --   --   50   --   --   98   --   --   60   93   87   --   19    3   --   --   --   --
+   7 |   60   32   38   39   --   --   98   --   54   65   --   77   --   --   19   --   --   77   --   --
+   8 |   43   --   --   --   --   --   --   54   --   98   --   --   --   --   42   --   --   61   --   70
+   9 |   70   38   62   --   --   76   --   65   98   --   --   --   78   --   71   --   --   10   47   --
+  10 |   16   91   21   --   90    4   60   --   --   --   --   --   --   14   44   84   --   83   --   --
+  11 |   --   35   34   96   55   24   93   77   --   --   --   --   70   90   75   38   --   91   73   86
+  12 |  100   --   51   89   84   87   87   --   --   78   --   70   --   --   41   98   82   77   --   --
+  13 |   76   48   --   --    6   --   --   --   --   --   14   90   --   --   --   --   11   36   52   77
+  14 |   91   --   71   16   82    9   19   19   42   71   44   75   41   --   --   11   36   20   24   --
+  15 |   67   69   --   77   36   52    3   --   --   --   84   38   98   --   11   --   89   37   --   92
+  16 |   90   --   --   --   --   63   --   --   --   --   --   --   82   11   36   89   --   --   --   90
+  17 |   --   22   --   96   --   77   --   77   61   10   83   91   77   36   20   37   --   --   --   12
+  18 |   76   --    3   --   --   43   --   --   --   47   --   73   --   52   24   --   --   --   --   --
+  19 |   85    5   18   99   54   47   --   --   70   --   --   86   --   77   --   92   90   12   --   --
+=== Dijkstra's Algorithm Step-by-Step ===
+Starting at node 0...
+
+--- Step 1 ---
+Current node: 0 (Cost: 0)
+  Exploring neighbors of 0:
+    New path to 1 found! Cost: 29 (Old Cost: inf)
+    New path to 5 found! Cost: 50 (Old Cost: inf)
+    New path to 6 found! Cost: 92 (Old Cost: inf)
+    New path to 7 found! Cost: 60 (Old Cost: inf)
+    New path to 8 found! Cost: 43 (Old Cost: inf)
+    New path to 9 found! Cost: 70 (Old Cost: inf)
+    New path to 10 found! Cost: 16 (Old Cost: inf)
+    New path to 12 found! Cost: 100 (Old Cost: inf)
+    New path to 13 found! Cost: 76 (Old Cost: inf)
+    New path to 14 found! Cost: 91 (Old Cost: inf)
+    New path to 15 found! Cost: 67 (Old Cost: inf)
+    New path to 16 found! Cost: 90 (Old Cost: inf)
+    New path to 18 found! Cost: 76 (Old Cost: inf)
+    New path to 19 found! Cost: 85 (Old Cost: inf)
+
+--- Step 2 ---
+Current node: 10 (Cost: 16)
+  Exploring neighbors of 10:
+    Path to 0 (Cost: 32) is not an improvement.
+    Path to 1 (Cost: 107) is not an improvement.
+    New path to 2 found! Cost: 37 (Old Cost: inf)
+    New path to 4 found! Cost: 106 (Old Cost: inf)
+    New path to 5 found! Cost: 20 (Old Cost: 50)
+    New path to 6 found! Cost: 76 (Old Cost: 92)
+    New path to 13 found! Cost: 30 (Old Cost: 76)
+    New path to 14 found! Cost: 60 (Old Cost: 91)
+    Path to 15 (Cost: 100) is not an improvement.
+    New path to 17 found! Cost: 99 (Old Cost: inf)
+
+--- Step 3 ---
+Current node: 5 (Cost: 20)
+  Exploring neighbors of 5:
+    Path to 0 (Cost: 70) is not an improvement.
+    Path to 2 (Cost: 119) is not an improvement.
+    New path to 4 found! Cost: 22 (Old Cost: 106)
+    Path to 9 (Cost: 96) is not an improvement.
+    Path to 10 (Cost: 24) is not an improvement.
+    New path to 11 found! Cost: 44 (Old Cost: inf)
+    Path to 12 (Cost: 107) is not an improvement.
+    New path to 14 found! Cost: 29 (Old Cost: 60)
+    Path to 15 (Cost: 72) is not an improvement.
+    New path to 16 found! Cost: 83 (Old Cost: 90)
+    New path to 17 found! Cost: 97 (Old Cost: 99)
+    New path to 18 found! Cost: 63 (Old Cost: 76)
+    New path to 19 found! Cost: 67 (Old Cost: 85)
+
+--- Step 4 ---
+Current node: 4 (Cost: 22)
+  Exploring neighbors of 4:
+    Path to 1 (Cost: 51) is not an improvement.
+    Path to 5 (Cost: 24) is not an improvement.
+    New path to 6 found! Cost: 72 (Old Cost: 76)
+    Path to 10 (Cost: 112) is not an improvement.
+    Path to 11 (Cost: 77) is not an improvement.
+    Path to 12 (Cost: 106) is not an improvement.
+    New path to 13 found! Cost: 28 (Old Cost: 30)
+    Path to 14 (Cost: 104) is not an improvement.
+    New path to 15 found! Cost: 58 (Old Cost: 67)
+    Path to 19 (Cost: 76) is not an improvement.
+
+--- Step 5 ---
+Current node: 13 (Cost: 28)
+  Exploring neighbors of 13:
+    Path to 0 (Cost: 104) is not an improvement.
+    Path to 1 (Cost: 76) is not an improvement.
+    Path to 4 (Cost: 34) is not an improvement.
+    Path to 10 (Cost: 42) is not an improvement.
+    Path to 11 (Cost: 118) is not an improvement.
+    New path to 16 found! Cost: 39 (Old Cost: 83)
+    New path to 17 found! Cost: 64 (Old Cost: 97)
+    Path to 18 (Cost: 80) is not an improvement.
+    Path to 19 (Cost: 105) is not an improvement.
+
+--- Step 6 ---
+Current node: 1 (Cost: 29)
+  Exploring neighbors of 1:
+    Path to 0 (Cost: 58) is not an improvement.
+    Path to 2 (Cost: 82) is not an improvement.
+    New path to 3 found! Cost: 112 (Old Cost: inf)
+    Path to 4 (Cost: 58) is not an improvement.
+    New path to 6 found! Cost: 45 (Old Cost: 72)
+    Path to 7 (Cost: 61) is not an improvement.
+    New path to 9 found! Cost: 67 (Old Cost: 70)
+    Path to 10 (Cost: 120) is not an improvement.
+    Path to 11 (Cost: 64) is not an improvement.
+    Path to 13 (Cost: 77) is not an improvement.
+    Path to 15 (Cost: 98) is not an improvement.
+    New path to 17 found! Cost: 51 (Old Cost: 64)
+    New path to 19 found! Cost: 34 (Old Cost: 67)
+
+--- Step 7 ---
+Current node: 14 (Cost: 29)
+  Exploring neighbors of 14:
+    Path to 0 (Cost: 120) is not an improvement.
+    Path to 2 (Cost: 100) is not an improvement.
+    New path to 3 found! Cost: 45 (Old Cost: 112)
+    Path to 4 (Cost: 111) is not an improvement.
+    Path to 5 (Cost: 38) is not an improvement.
+    Path to 6 (Cost: 48) is not an improvement.
+    New path to 7 found! Cost: 48 (Old Cost: 60)
+    Path to 8 (Cost: 71) is not an improvement.
+    Path to 9 (Cost: 100) is not an improvement.
+    Path to 10 (Cost: 73) is not an improvement.
+    Path to 11 (Cost: 104) is not an improvement.
+    New path to 12 found! Cost: 70 (Old Cost: 100)
+    New path to 15 found! Cost: 40 (Old Cost: 58)
+    Path to 16 (Cost: 65) is not an improvement.
+    New path to 17 found! Cost: 49 (Old Cost: 51)
+    New path to 18 found! Cost: 53 (Old Cost: 63)
+
+--- Step 8 ---
+Current node: 13 (Cost: 30)
+  Skipping 13: already found a shorter path.
+--- Step 9 ---
+Current node: 19 (Cost: 34)
+  Exploring neighbors of 19:
+    Path to 0 (Cost: 119) is not an improvement.
+    Path to 1 (Cost: 39) is not an improvement.
+    Path to 2 (Cost: 52) is not an improvement.
+    Path to 3 (Cost: 133) is not an improvement.
+    Path to 4 (Cost: 88) is not an improvement.
+    Path to 5 (Cost: 81) is not an improvement.
+    Path to 8 (Cost: 104) is not an improvement.
+    Path to 11 (Cost: 120) is not an improvement.
+    Path to 13 (Cost: 111) is not an improvement.
+    Path to 15 (Cost: 126) is not an improvement.
+    Path to 16 (Cost: 124) is not an improvement.
+    New path to 17 found! Cost: 46 (Old Cost: 49)
+
+--- Step 10 ---
+Current node: 2 (Cost: 37)
+  Exploring neighbors of 2:
+    Path to 1 (Cost: 90) is not an improvement.
+    Path to 5 (Cost: 136) is not an improvement.
+    Path to 7 (Cost: 75) is not an improvement.
+    Path to 9 (Cost: 99) is not an improvement.
+    Path to 10 (Cost: 58) is not an improvement.
+    Path to 11 (Cost: 71) is not an improvement.
+    Path to 12 (Cost: 88) is not an improvement.
+    Path to 14 (Cost: 108) is not an improvement.
+    New path to 18 found! Cost: 40 (Old Cost: 53)
+    Path to 19 (Cost: 55) is not an improvement.
+
+--- Step 11 ---
+Current node: 16 (Cost: 39)
+  Exploring neighbors of 16:
+    Path to 0 (Cost: 129) is not an improvement.
+    Path to 5 (Cost: 102) is not an improvement.
+    Path to 12 (Cost: 121) is not an improvement.
+    Path to 13 (Cost: 50) is not an improvement.
+    Path to 14 (Cost: 75) is not an improvement.
+    Path to 15 (Cost: 128) is not an improvement.
+    Path to 19 (Cost: 129) is not an improvement.
+
+--- Step 12 ---
+Current node: 15 (Cost: 40)
+  Exploring neighbors of 15:
+    Path to 0 (Cost: 107) is not an improvement.
+    Path to 1 (Cost: 109) is not an improvement.
+    Path to 3 (Cost: 117) is not an improvement.
+    Path to 4 (Cost: 76) is not an improvement.
+    Path to 5 (Cost: 92) is not an improvement.
+    New path to 6 found! Cost: 43 (Old Cost: 45)
+    Path to 10 (Cost: 124) is not an improvement.
+    Path to 11 (Cost: 78) is not an improvement.
+    Path to 12 (Cost: 138) is not an improvement.
+    Path to 14 (Cost: 51) is not an improvement.
+    Path to 16 (Cost: 129) is not an improvement.
+    Path to 17 (Cost: 77) is not an improvement.
+    Path to 19 (Cost: 132) is not an improvement.
+
+--- Step 13 ---
+Current node: 18 (Cost: 40)
+  Exploring neighbors of 18:
+    Path to 0 (Cost: 116) is not an improvement.
+    Path to 2 (Cost: 43) is not an improvement.
+    Path to 5 (Cost: 83) is not an improvement.
+    Path to 9 (Cost: 87) is not an improvement.
+    Path to 11 (Cost: 113) is not an improvement.
+    Path to 13 (Cost: 92) is not an improvement.
+    Path to 14 (Cost: 64) is not an improvement.
+
+--- Step 14 ---
+Current node: 6 (Cost: 43)
+  Exploring neighbors of 6:
+    Path to 0 (Cost: 135) is not an improvement.
+    Path to 1 (Cost: 59) is not an improvement.
+    Path to 4 (Cost: 93) is not an improvement.
+    Path to 7 (Cost: 141) is not an improvement.
+    Path to 10 (Cost: 103) is not an improvement.
+    Path to 11 (Cost: 136) is not an improvement.
+    Path to 12 (Cost: 130) is not an improvement.
+    Path to 14 (Cost: 62) is not an improvement.
+    Path to 15 (Cost: 46) is not an improvement.
+
+--- Step 15 ---
+Current node: 8 (Cost: 43)
+  Exploring neighbors of 8:
+    Path to 0 (Cost: 86) is not an improvement.
+    Path to 7 (Cost: 97) is not an improvement.
+    Path to 9 (Cost: 141) is not an improvement.
+    Path to 14 (Cost: 85) is not an improvement.
+    Path to 17 (Cost: 104) is not an improvement.
+    Path to 19 (Cost: 113) is not an improvement.
+
+--- Step 16 ---
+Current node: 11 (Cost: 44)
+  Exploring neighbors of 11:
+    Path to 1 (Cost: 79) is not an improvement.
+    Path to 2 (Cost: 78) is not an improvement.
+    Path to 3 (Cost: 140) is not an improvement.
+    Path to 4 (Cost: 99) is not an improvement.
+    Path to 5 (Cost: 68) is not an improvement.
+    Path to 6 (Cost: 137) is not an improvement.
+    Path to 7 (Cost: 121) is not an improvement.
+    Path to 12 (Cost: 114) is not an improvement.
+    Path to 13 (Cost: 134) is not an improvement.
+    Path to 14 (Cost: 119) is not an improvement.
+    Path to 15 (Cost: 82) is not an improvement.
+    Path to 17 (Cost: 135) is not an improvement.
+    Path to 18 (Cost: 117) is not an improvement.
+    Path to 19 (Cost: 130) is not an improvement.
+
+--- Step 17 ---
+Current node: 3 (Cost: 45)
+  Exploring neighbors of 3:
+    Path to 1 (Cost: 128) is not an improvement.
+    Path to 7 (Cost: 84) is not an improvement.
+    Path to 11 (Cost: 141) is not an improvement.
+    Path to 12 (Cost: 134) is not an improvement.
+    Path to 14 (Cost: 61) is not an improvement.
+    Path to 15 (Cost: 122) is not an improvement.
+    Path to 17 (Cost: 141) is not an improvement.
+    Path to 19 (Cost: 144) is not an improvement.
+
+--- Step 18 ---
+Current node: 6 (Cost: 45)
+  Skipping 6: already found a shorter path.
+--- Step 19 ---
+Current node: 17 (Cost: 46)
+  Exploring neighbors of 17:
+    Path to 1 (Cost: 68) is not an improvement.
+    Path to 3 (Cost: 142) is not an improvement.
+    Path to 5 (Cost: 123) is not an improvement.
+    Path to 7 (Cost: 123) is not an improvement.
+    Path to 8 (Cost: 107) is not an improvement.
+    New path to 9 found! Cost: 56 (Old Cost: 67)
+    Path to 10 (Cost: 129) is not an improvement.
+    Path to 11 (Cost: 137) is not an improvement.
+    Path to 12 (Cost: 123) is not an improvement.
+    Path to 13 (Cost: 82) is not an improvement.
+    Path to 14 (Cost: 66) is not an improvement.
+    Path to 15 (Cost: 83) is not an improvement.
+    Path to 19 (Cost: 58) is not an improvement.
+
+--- Step 20 ---
+Current node: 7 (Cost: 48)
+  Exploring neighbors of 7:
+    Path to 0 (Cost: 108) is not an improvement.
+    Path to 1 (Cost: 80) is not an improvement.
+    Path to 2 (Cost: 86) is not an improvement.
+    Path to 3 (Cost: 87) is not an improvement.
+    Path to 6 (Cost: 146) is not an improvement.
+    Path to 8 (Cost: 102) is not an improvement.
+    Path to 9 (Cost: 113) is not an improvement.
+    Path to 11 (Cost: 125) is not an improvement.
+    Path to 14 (Cost: 67) is not an improvement.
+    Path to 17 (Cost: 125) is not an improvement.
+
+--- Step 21 ---
+Current node: 17 (Cost: 49)
+  Skipping 17: already found a shorter path.
+--- Step 22 ---
+Current node: 5 (Cost: 50)
+  Skipping 5: already found a shorter path.
+--- Step 23 ---
+Current node: 17 (Cost: 51)
+  Skipping 17: already found a shorter path.
+--- Step 24 ---
+Current node: 18 (Cost: 53)
+  Skipping 18: already found a shorter path.
+--- Step 25 ---
+Current node: 9 (Cost: 56)
+Target node 9 reached. Path found!
+
+==================================================
+Minimum cost path from node 0 to node 9:
+Path: 0 -> 1 -> 19 -> 17 -> 9
+Total Cost: 56
